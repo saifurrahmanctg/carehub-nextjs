@@ -14,7 +14,7 @@ const Banner = () => {
           caregivers, and special care providers — ensuring comfort, safety, and
           peace of mind.
         </p>
-        <button className="btn md:btn-wide btn-secondary rounded-full hover:bg-transparent hover:text-secondary">
+        <button className="btn md:btn-wide btn-secondary rounded-full p-6 hover:bg-transparent hover:text-secondary">
           OUR CARE SERVICES
         </button>
       </div>

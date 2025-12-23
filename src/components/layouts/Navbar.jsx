@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import Logo from "./Logo";
+
 import { IoMenu } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 
@@ -10,11 +11,19 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-base-100  shadow-lg font-poppins">
-      <div className="max-w-7xl mx-auto px-4 py-1">
+    <nav className="bg-base-100 shadow-lg font-poppins">
+      <div className="max-w-7xl mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
           {/* Left: Logo */}
-          <Logo />
+          <Link href={"/"}>
+            <Image
+              src={"/logo.png"}
+              alt="Logo"
+              width={300}
+              height={100}
+              className="w-32"
+            />
+          </Link>
 
           {/* Middle: Menu (Desktop) */}
           <div className="hidden md:flex items-center gap-8">
@@ -36,7 +45,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <Link
               href="/services"
-              className="bg-[#8bc53e] text-white px-5 py-2 rounded-full hover:bg-[#532270] transition"
+              className="bg-white text-primary font-medium border-2 px-5 py-2 rounded-full hover:bg-primary hover:text-white transition"
             >
               Book Service
             </Link>

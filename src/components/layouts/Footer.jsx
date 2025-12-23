@@ -1,19 +1,27 @@
 import Link from "next/link";
-import Logo from "./Logo";
 import { IoCallSharp, IoLocation } from "react-icons/io5";
 import { IoMdMail } from "react-icons/io";
 import { FaSquareFacebook, FaSquareXTwitter } from "react-icons/fa6";
 import { FaPinterestSquare } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-base-300 text-green-700 mt-20">
+    <footer className="bg-primary text-secondary mt-20">
       <div className="max-w-7xl mx-auto px-4 py-12 md:flex gap-8">
         {/* Brand Info */}
         <div className="flex-1">
-          <Logo />
-          <p className="mt-3 text-sm text-gray-700 text-justify">
-            <span className="font-serif text-primary">
+          <Link href={"/"}>
+            <Image
+              src={"/logo-dark.png"}
+              alt="Logo"
+              width={300}
+              height={100}
+              className="w-40"
+            />
+          </Link>
+          <p className="mt-3 text-sm text-gray-300 text-justify">
+            <span className="font-serif text-white">
               Care<span className="text-secondary">Hub</span>
             </span>{" "}
             provides trusted baby sitting, elderly care and special care
@@ -23,8 +31,8 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div className="mt-3 flex-1">
-          <h3 className="text-xl text-black mb-3 font-serif">Quick Links</h3>
-          <ul className="space-y-2 text-sm text-gray-700">
+          <h3 className="text-xl mb-3 font-serif">Quick Links</h3>
+          <ul className="space-y-2 text-sm text-gray-300">
             <li>
               <Link
                 href="/"
@@ -62,18 +70,18 @@ export default function Footer() {
 
         {/* Contact Info */}
         <div className="mt-3 flex-1">
-          <h3 className="text-xl text-black mb-3 font-serif">Contact Us</h3>
+          <h3 className="text-xl mb-3 font-serif">Contact Us</h3>
           <ul className="space-y-2 text-sm">
             <span>Address:</span>
-            <li className="flex items-center gap-1 text-gray-700">
+            <li className="flex items-center gap-1 text-gray-300">
               <IoLocation /> Chittagong, Bangladesh
             </li>
             <span>Phone:</span>
-            <li className="flex items-center gap-1 text-gray-700">
+            <li className="flex items-center gap-1 text-gray-300">
               <IoCallSharp /> +880 1234 567 890
             </li>
             <span>Email:</span>
-            <li className="flex items-center gap-1 text-gray-700">
+            <li className="flex items-center gap-1 text-gray-300">
               <IoMdMail /> info@carehub.com
             </li>
           </ul>
@@ -81,17 +89,17 @@ export default function Footer() {
 
         {/* Services */}
         <div className="mt-3 flex-1">
-          <h3 className="text-xl text-black mb-3 font-serif">Newsletter</h3>
+          <h3 className="text-xl mb-3 font-serif">Newsletter</h3>
           <ul className="space-y-3 text-sm">
             <li>
               <form action="submit">
-                <label htmlFor="Subscribe">Subscribe Now</label>
+                <label>Subscribe Now</label>
                 <input
                   type="email"
                   name="email"
                   id=""
                   placeholder="Your email"
-                  className="input input-accent block"
+                  className="input input-accent block text-secondary"
                 />
               </form>
             </li>
@@ -112,7 +120,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-green-700/40 py-4 text-center text-sm text-green-700/80">
+      <div className="border-t border-green-700/40 py-4 text-center text-sm text-gray-300">
         © {new Date().getFullYear()} CareHub. All rights reserved.
       </div>
     </footer>

@@ -3,12 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import TopNav from "@/components/layouts/TopNav";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
+import GoToTop from "@/components/layouts/GoToTop";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -32,9 +27,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${poppins.variable} ${serif.variable} antialiased`}
-      >
+      <body className={`${poppins.variable} ${serif.variable} antialiased`}>
         <header className="sticky top-0 z-50">
           <TopNav />
           <Navbar />
@@ -43,6 +36,7 @@ export default function RootLayout({ children }) {
         <footer>
           <Footer />
         </footer>
+        <GoToTop/>
       </body>
     </html>
   );

@@ -26,13 +26,8 @@
 @custom-variant dark (&:where([data-theme=night], [data-theme=night] *));
 
 :root {
-  --font-inter: "Inter", sans-serif;
   --font-poppins: "Poppins", sans-serif;
-  --font-playfair: "DM_Serif_Display", serif;
-}
-
-.font-inter {
-  font-family: var(--font-inter);
+  --font-serif: "DM_Serif_Display", serif;
 }
 
 .font-poppins {
@@ -42,7 +37,9 @@
 .font-serif {
   font-family: var(--font-serif);
 }
-
+body {
+  font-family: var(--font-poppins);
+}
 .nav-link {
   @apply text-[#5e9c0c] hover:text-[#662c91] transition font-medium;
 }
