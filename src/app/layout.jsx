@@ -4,6 +4,8 @@ import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import TopNav from "@/components/layouts/TopNav";
 import GoToTop from "@/components/layouts/GoToTop";
+import AuthProvider from "@/components/AuthProvider";
+import { Toaster } from "react-hot-toast";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -27,16 +29,25 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${serif.variable} antialiased`}>
-        <header className="sticky top-0 z-50">
-          <TopNav />
-          <Navbar />
-        </header>
-        <main>{children}</main>
-        <footer>
-          <Footer />
-        </footer>
-        <GoToTop/>
+      <body className={`${poppins.variable} ${serif.variable} antialiased font-poppins`}>
+        <AuthProvider>
+          <div className="min-h-screen">
+            {children}
+          </div>
+          <Toaster
+            position="top-center"
+            reverseOrder={false}
+            toastOptions={{
+              duration: 4000,
+              style: {
+                background: '#333',
+                color: '#fff',
+                borderRadius: '10px',
+                fontSize: '14px',
+              },
+            }}
+          />
+        </AuthProvider>
       </body>
     </html>
   );
