@@ -7,6 +7,18 @@ const nextConfig = {
         protocol: "https",
         hostname: "i.ibb.co.com",
       },
+      {
+        protocol: "https",
+        hostname: "i.ibb.co",
+      },
+      {
+        protocol: "https",
+        hostname: "i.pravatar.cc",
+      },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+      },
     ],
   },
 };
