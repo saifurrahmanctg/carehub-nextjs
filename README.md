@@ -1,6 +1,6 @@
 # CareHub - Professional Healthcare Service Booking Platform
 
-![CareHub Banner](./public/care-giving.png)
+![CareHub Banner](./public/github-readme.jpg)
 
 CareHub is a comprehensive, full-stack web application designed to bridge the gap between professional healthcare providers and patients. It offers a seamless experience for booking care services (Baby Care, Elderly Care, Sick People Care), managing appointments, and processing secure payments. Built with the latest web technologies, CareHub ensures a robust, secure, and user-friendly environment.
 
