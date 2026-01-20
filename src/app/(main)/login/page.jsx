@@ -35,8 +35,9 @@ function LoginForm() {
         toast.error(res.error);
       } else {
         toast.success("Logged in successfully!");
-        router.push(callbackUrl);
-        router.refresh();
+        // Use window.location.href to ensure a full page reload so cookies are sent correctly
+        // and middleware recognizes the new session immediately.
+        window.location.href = callbackUrl;
       }
     } catch (error) {
       toast.error("Something went wrong. Please try again.");
