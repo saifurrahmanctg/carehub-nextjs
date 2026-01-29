@@ -1,3 +1,5 @@
+import { dbConnect } from "@/lib/dbConnect";
+import clientPromise from "@/lib/dbConnect";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -5,27 +7,35 @@ import { FaArrowLeft, FaCheckCircle, FaCalendarCheck, FaMoneyBillWave, FaClock, 
 
 export async function generateMetadata({ params }) {
   const { id } = await params;
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/services?id=${id}`);
-  const data = await res.json();
-  const service = data.service;
+  
+  try {
+    await clientPromise;
+    const servicesCollection = dbConnect("services");
+    const service = await servicesCollection.findOne({ id: id });
 
-  if (!service) {
+    if (!service) {
+      return {
+        title: "Service Not Found | CareHub",
+      };
+    }
+
     return {
-      title: "Service Not Found | CareHub",
+      title: `${service.title} | CareHub`,
+      description: service.description,
+    };
+  } catch (error) {
+    return {
+      title: "Service Details | CareHub",
     };
   }
-
-  return {
-    title: `${service.title} | CareHub`,
-    description: service.description,
-  };
 }
 
 export default async function ServiceDetails({ params }) {
   const { id } = await params;
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/services?id=${id}`);
-  const data = await res.json();
-  const service = data.service;
+  
+  await clientPromise;
+  const servicesCollection = dbConnect("services");
+  const service = await servicesCollection.findOne({ id: id });
 
   if (!service) {
     notFound();

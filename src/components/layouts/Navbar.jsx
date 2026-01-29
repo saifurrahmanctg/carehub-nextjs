@@ -87,7 +87,7 @@ export default function Navbar() {
                   <div className="w-10 h-10 rounded-full border-2 border-primary p-0.5 shadow-sm overflow-hidden bg-primary/5">
                     <img
                       alt="User Avatar"
-                      src={session.user?.image || "https://i.ibb.co.com/mrg7mMTJ/user-placeholder.png"}
+                      src={session.user?.image || "https://i.ibb.co/mrg7mMTJ/user-placeholder.png"}
                       className="w-full h-full rounded-full object-cover"
                     />
                   </div>

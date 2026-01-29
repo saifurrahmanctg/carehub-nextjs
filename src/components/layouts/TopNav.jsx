@@ -63,7 +63,7 @@ export default function TopNav() {
                   </span>
                   <div className="w-7 h-7 rounded-full border-2 border-white/20 overflow-hidden shadow-sm group-hover:border-primary/50 transition-all">
                     <img
-                      src={session.user?.image || "https://i.ibb.co.com/mrg7mMTJ/user-placeholder.png"}
+                      src={session.user?.image || "https://i.ibb.co/mrg7mMTJ/user-placeholder.png"}
                       alt="User"
                       className="w-full h-full object-cover"
                     />
